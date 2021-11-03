@@ -1,0 +1,49 @@
+html,body {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background-image: url("https://cadenaser00.epimg.net/ser/imagenes/2021/04/08/ciencia/1617866705_638557_1617869065_noticia_normal.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.timetofly {
+    text-align: center;
+    padding-top: 60px;
+    font-size: 150px;
+    color: white;
+    font-family: monaco,Consolas,Lucida Console,monospace;
+}
+
+.instructions {
+  font-size: 1.6em;
+  text-align: center;
+  border: 2px solid #eee;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 10px 0 #eee;
+  margin: 50px 5% 0 5%;
+  padding: 20px 20px 20px 20px;
+  width: 20%;
+  color: white;
+  text-shadow:  2px 2px 10px;
+}
+
+.play{
+    font-size: 40px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 20%;
+    margin-left: 40%;
+    color: white;
+    background-color: rgb(66, 61, 61);
+    text-shadow:  2px 2px 10px;
+    
+}
+
+.hide {
+    display: none;
+}
