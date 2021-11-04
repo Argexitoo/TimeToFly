@@ -185,3 +185,14 @@ body {
     
 }
 
+#canvas {
+    background-color: white;
+    position:relative;
+    bottom: 2000px;
+    
+
+}
+
+.hide {
+    display:none;
+}
