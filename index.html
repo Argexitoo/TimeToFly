@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <div id="splash-screen">
     <div class ="panel">
         <h2 class="instructions">Instructions</h2>
         <ul class="menu">
@@ -15,31 +16,38 @@
             <p>Right Arrow: Right</p>
             <p>Try to dodge the birds</p>
         </ul>
-    </div >
+    </div>
     <div class = "centro">   
         <h1 class="timetofly">TimeToFly</h1>
-        <h3 class ="play">Play</h3>
+        <button id ="play">Play</button>
     </div>
-   <div id="pause">
+</div>
+   <div class="pause hide ">
     <p class="p-pause">Game Paused</p>
     <p class="btn-continue">Continue</p>
    </div>
-   <div id="game-over">
+   <div class="game-over hide">
        <p class="over">Game Over</p>
        <p class="phrase">Good Luck Next Time</p>
        <p class="btn-again">Try It Again</p>
    </div>
-   <div id="win">
+   <div class="win hide">
        <p class="gz">Congratulations</p>
        <p class="good-job">You have managed to reach space</p>
        <p class="btn-play-again">Play Again</p>
    </div>
    <canvas
-        width="1500"
-        height="650"
+        width="1430"
+        height="715"
         id="canvas"
         class="hide"
-      ></canvas>
+     ></canvas>
+
+
+     <script src="baloon.js"></script>
+     <script src="enemies.js"></script>
+     <script src="game.js"></script>
+     <script src="main.js"></script>
    
 </body>
 </html>
