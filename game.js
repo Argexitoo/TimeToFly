@@ -2,7 +2,7 @@ class Game {
     constructor(ctx){
         this.ctx = ctx;
         this.baloon = new Baloon(100, 25, 30, 30, "red");
-        this.enemy = new Enemy(25, 25, 30, 30, "black");
+        //this.enemy = new Enemy(25, 25, 30, 30, "black");
         this.enemies = [];
         this.interval;
     }
@@ -17,14 +17,15 @@ class Game {
         this.ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height)
     }
 
+
+    _getRandom(){
+        let random = Math.floor(Math.random() * 1430);
+        return random;
+    }
+
      _generateEnemies(){
-         console.log("Generating enemies");
-         function randomX() {
-            let random = Math.floor(Math.random() * 1430);
-            return random;
-        }
-        setInterval(() => {    
-            let newEnemy = new Enemy(randomX(), 25, 30, 30, "blue");
+        setInterval(() => {  
+            let newEnemy = new Enemy(this._getRandom(), -35, 30, 30, "blue");
             this.enemies.push(newEnemy);
         }, 1000);
     }
@@ -54,27 +55,27 @@ class Game {
         })
     }
 
-    
+    _moveDownGeneratedBalloons(){
+        setInterval(() => {
+            for (let i = 0; i < this.enemies.length; i++){
+                this.enemies[i]._moveDown();
+           }
+        }, 100)
+    }
 
     _renderfFrame(){
-        console.log("rendering");
         this._clean();
         this._drawBaloon();
-        this._drawEnemy(this.enemy);
-        this.enemy._moveDown();
-    //     for (let i = 0; i < this.enemies.length; i++){
-    //         console.log(this.enemies[i]);
-    //         this.enemies[i]._drawEnemy(this.enemies[i]);
-    //    }
+        for (let i = 0; i < this.enemies.length; i++){
+            this._drawEnemy(this.enemies[i]);
+       }
         window.requestAnimationFrame(this._renderfFrame.bind(this));
-        
-       
     }
 
     start() {
-        console.log("starting");
         this._assignControls();
         this._generateEnemies();
+        this._moveDownGeneratedBalloons();
         window.requestAnimationFrame(this._renderfFrame.bind(this));
     }
 }
