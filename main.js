@@ -6,11 +6,8 @@ window.addEventListener("load", function () {
       const ctx = canvas.getContext("2d");
   
       const baloonGame = new Game(ctx);
-        //ctx: ctx,
-        // baloon: new Baloon(50, 400, 30, 30, "red")
-      //});
   
-      baloonGame.start();
+     baloonGame.start();
     }
   
     function startCanvas() {
