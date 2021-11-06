@@ -4,6 +4,7 @@ class Game {
         this.baloon = new Baloon(100, 25, 30, 30, "red");
         this.enemy = new Enemy(25, 25, 30, 30, "black");
         this.enemies = [];
+        this.interval;
     }
 
     _drawBaloon(){
@@ -11,27 +12,28 @@ class Game {
         this.ctx.fillRect(this.baloon.x, this.baloon.y, this.baloon.width, this.baloon.height)
     }
 
-    _drawEnemy() {
-        this.ctx.fillStyle = this.enemy.color;
-        this.ctx.fillRect(this.enemy.x, this.enemy.y, this.enemy.width, this.enemy.height)
+    _drawEnemy(enemy) {
+        this.ctx.fillStyle = enemy.color;
+        this.ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height)
     }
 
-    _generatEnemies(){
-        let newEnemy = new Enemy()
-        this.enemies.push(newEnemy)
-        setInterval(() => {
-            this.x = Math.floor(Math.random() * this.x)
-        }, 500)
-        // setInterval
-        // Generar enemics random a x randoms
-        // fer push a larray que tinc al constructor
-        // anar cridant a les funcions de pintar-se i de moure's
+     _generateEnemies(){
+         console.log("Generating enemies");
+         function randomX() {
+            let random = Math.floor(Math.random() * 1430);
+            return random;
+        }
+        setInterval(() => {    
+            let newEnemy = new Enemy(randomX(), 25, 30, 30, "blue");
+            this.enemies.push(newEnemy);
+        }, 1000);
     }
+    
 
-    //_clean() {
-       // this.ctx.fillStyle = "white";
-        //this.ctx.fillRect(0, 0, 1430, 715);
-     // }
+    _clean() {
+        this.ctx.fillStyle = "white";
+        this.ctx.fillRect(0, 0, 1430, 715);
+      }
 
     _assignControls(){
         document.addEventListener("keydown", (event) => {
@@ -41,6 +43,13 @@ class Game {
                     break;
                 case "ArrowRight":
                     this.baloon.goRight();
+                    break;
+                case "ArrowUp":
+                    this.baloon.goUp();
+                    break;
+                case "ArrowDown":
+                    this.baloon.goDown();
+                    break
             }
         })
     }
@@ -51,18 +60,21 @@ class Game {
         console.log("rendering");
         this._clean();
         this._drawBaloon();
-        this._drawEnemy();
+        this._drawEnemy(this.enemy);
         this.enemy._moveDown();
-        this._generatEnemies();
+    //     for (let i = 0; i < this.enemies.length; i++){
+    //         console.log(this.enemies[i]);
+    //         this.enemies[i]._drawEnemy(this.enemies[i]);
+    //    }
         window.requestAnimationFrame(this._renderfFrame.bind(this));
-        this._assignControls();
-    
+        
        
     }
 
     start() {
         console.log("starting");
-        
+        this._assignControls();
+        this._generateEnemies();
         window.requestAnimationFrame(this._renderfFrame.bind(this));
-}
+    }
 }

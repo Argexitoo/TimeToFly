@@ -9,11 +9,19 @@ class Baloon {
     }
 
     goRight() {
-        this.x += 1;
+        this.x += 15;
     }
 
     goLeft() {
-        this.x -= 1;
+        this.x -= 15;
+    }
+
+    goUp() {
+        this.y -= 15
+    }
+
+    goDown() {
+        this.y += 15
     }
 
     //receiveDamage()

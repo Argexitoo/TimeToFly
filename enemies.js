@@ -12,9 +12,7 @@ class Enemy {
     _moveDown() {
         this.interval = setInterval(() => {
             this.y = this.y +1
-        },400)
-        // setInterval
+        },3000)
         // setTimeOut
-        // sumar a la Y
     }
 }
