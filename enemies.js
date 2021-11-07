@@ -11,8 +11,7 @@ class Enemy {
     
     _moveDown() {
         this.interval = setInterval(() => {
-            this.y = this.y +1
+            this.y = this.y + 1;
         },90)
-        // setTimeOut
     }
 }
