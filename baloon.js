@@ -16,13 +16,5 @@ class Baloon {
         this.x -= 15;
     }
 
-    goUp() {
-        this.y -= 15
-    }
-
-    goDown() {
-        this.y += 15
-    }
-
     //receiveDamage()
 }

@@ -11,7 +11,7 @@ class Enemy {
     
     _moveDown() {
         this.interval = setInterval(() => {
-            this.y = this.y + 1;
-        },40)
+            this.y = this.y + 2;
+        },70)
     }
 }

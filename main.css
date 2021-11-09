@@ -3,11 +3,12 @@ html,body {
     padding: 0
 }
 
-#splash-screen {
+body {
     background-image: url("https://cadenaser00.epimg.net/ser/imagenes/2021/04/08/ciencia/1617866705_638557_1617869065_noticia_normal.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-}
+}    
+    
 
 .timetofly {
     text-align: center;
@@ -80,16 +81,18 @@ html,body {
 
 /**** PAUSED SCREEN ****/
 
+
 .pause {
     border: 2px solid white;
     text-align: center;
     width: 20%;
     padding: 50px 50px 10px 50px;
     position: relative;
-    left: 550px;
-    bottom: 100px;
+    left: 520px;
+    bottom: 500px;
     font-size: 50px;
     background-color: black;
+    
 }
 
 
@@ -118,6 +121,7 @@ html,body {
     padding-bottom: 10px;
     margin-bottom: 10px;
     background-color: black;
+    bottom: 900px
     
 }
 
@@ -157,6 +161,7 @@ html,body {
     padding: 70px 125px 0px 70px;
     left: 500px;
     background-color: black;
+    bottom: 1350px
 }
 
 .gz {

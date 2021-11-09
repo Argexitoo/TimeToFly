@@ -15,10 +15,26 @@ window.addEventListener("load", function () {
         document.getElementById("canvas").classList.add("show");
         document.getElementById("splash-screen").classList.add("hide")
         generateGame();
+        stopGame();
     }
+
+     
 
     const button = document.getElementById("play");
     button.addEventListener("click", startCanvas);
+
+    const btnContinue = document.getElementById("btn"); // REPASSAR
+    btnContinue.addEventListener("click", stopGame);
+
+    const btnAgain = document.getElementById("btnAgain");
+    btnAgain.addEventListener("click", startCanvas) ;
+
+    const btnWin = document.getElementById("btnWin");
+    btnWin.addEventListener("click", startCanvas);
+
+
+
+
 
     //startCanvas();
     
@@ -26,13 +42,6 @@ window.addEventListener("load", function () {
   });
 
 
-
-
-
-    // amb css amagar la splash screen 
-    // mostrar el canvas (display: block;) amb css 
-    // const baloonGame = new Game()
-    // baloonGame.start()
 
 
 
